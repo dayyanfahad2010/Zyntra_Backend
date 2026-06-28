@@ -9,6 +9,7 @@ export const initSocket = (server) => {
                 "http://localhost:5173",
                 "https://zyntra-frontend-zeta.vercel.app"
             ],
+             methods: ["GET", "POST"],
             credentials:true
         }
     });
