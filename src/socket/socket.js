@@ -7,7 +7,8 @@ export const initSocket = (server) => {
         cors:{
             origin:[
                 "http://localhost:5173",
-                "https://zyntra-frontend-zeta.vercel.app"
+                "https://zyntra-frontend-zeta.vercel.app",
+                "https://zyntra-frontend-zeta.netlify.app"
             ],
              methods: ["GET", "POST"],
             credentials:true

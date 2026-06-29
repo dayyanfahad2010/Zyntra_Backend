@@ -18,7 +18,8 @@ app.use(express.json());
 const corsOptions = {
   origin: [
             "http://localhost:5173",
-            "https://zyntra-frontend-zeta.vercel.app"
+            "https://zyntra-frontend-zeta.vercel.app",
+            "https://zyntra-frontend-zeta.netlify.app"
         ], // exact frontend URL
   credentials: true, // agar cookies/auth use ho rahi hai
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
