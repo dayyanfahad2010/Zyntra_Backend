@@ -14,21 +14,20 @@ import wishlistRoutes from "./routes/wishlistRoutes.js"
 
 const app = express();
 
-app.use(express.json());
 const corsOptions = {
   origin: [
-            "http://localhost:5173",
-            "https://zyntra-frontend-zeta.vercel.app",
-            "https://zyntra-frontend-zeta.netlify.app"
-        ], // exact frontend URL
+    "http://localhost:5173",
+    "https://zyntra-frontend-zeta.vercel.app",
+    "https://zyntra-frontend-zeta.netlify.app"
+  ], // exact frontend URL
   credentials: true, // agar cookies/auth use ho rahi hai
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 };
-
+app.options("*", cors(corsOptions)); 
 app.use(cors(corsOptions));
-// console.log("Allowed Origin:", "https://zyntra-frontend-zeta.vercel.app");
-  app.use(cookieParser());
+app.use(express.json());
+app.use(cookieParser());
 
 app.use("/api/auth/",authRoutes);
 app.use("/api/products/",productRoutes);

@@ -50,7 +50,8 @@ const login = async (req, res, next) => {
     res.cookie("token", userToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      secure: true,        // HTTPS ke liye zaroori
+      sameSite: "none", 
       maxAge: 3 * 60 * 60 * 1000,
     });
     successResponse(
